@@ -220,14 +220,13 @@ class QuizGame {
         const percentage = (this.score / this.questions.length) * 100;
         let comment = "";
         
-        if (percentage === 100) {
-            comment = "Excellent! Vous êtes un génie!";
-        } else if (percentage >= 80) {
-            comment = "Très bien! Vous avez bien maitrisé cette leçon.";
-        } else if (percentage >= 65) {
-            comment = "Bien! Vous êtes sur la bonne voie.";
-        } else if (percentage >= 60) {
-            comment = "Pas mal! Vous pouvez encore vous améliorer.";
+        if (percentage >= 65) {
+            comment = "Très bien! Vous avez bien maitrisé cette leçon. Rédirection dans 5 secondes";
+            
+            setTimeout(() => {
+                window.location.href = "";
+            }, 5000);  
+
         } else {
             comment = "Dommage! Peut-être devriez-vous réviser un peu.";
         }

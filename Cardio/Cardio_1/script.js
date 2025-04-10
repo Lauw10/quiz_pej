@@ -1,100 +1,11 @@
 // Exemple de questions pour ce quiz
-const questions4 = [
-    {
-        question: "Quel germe cause le plus souvent les pneumonies communautaires ?",
-        answers: [
-            { text: "Legionella pneumophila", correct: false },
-            { text: "Streptococcus pneumoniae", correct: true },
-            { text: "Mycoplasma pneumoniae", correct: false },
-            { text: "Klebsiella pneumoniae", correct: false }
-        ]
-    },
-    {
-        question: "Quel critère spirométrique définit la BPCO ?",
-        answers: [
-            { text: "DLCO < 60%", correct: false },
-            { text: "CV < 80%", correct: false },
-            { text: "CPT > 120%", correct: false },
-            { text: "VEMS/CV < 70%", correct: true }
-        ]
-    },
-    {
-        question: "Quelle caractéristique radiologique est typique d'une pneumonie à pneumocoque ?",
-        answers: [
-            { text: "Opacité lobaire ou segmentaire bien limitée", correct: true },
-            { text: "Opacités en verre dépoli diffuses", correct: false },
-            { text: "Épanchement pleural bilatéral", correct: false },
-            { text: "Images kystiques multiples", correct: false }
-        ]
-    },
-    {
-        question: "Quelle complication est la plus redoutée dans l'asthme aigu grave ?",
-        answers: [
-            { text: "Pneumothorax", correct: false },
-            { text: "Arrêt respiratoire", correct: true },
-            { text: "Emphysème sous-cutané", correct: false },
-            { text: "Bronchectasies", correct: false }
-        ]
-    },
-    {
-        question: "Quel examen permet de diagnostiquer une embolie pulmonaire ?",
-        answers: [
-            { text: "Angio-scanner thoracique", correct: true },
-            { text: "Radiographie thoracique", correct: false },
-            { text: "Échographie pleurale", correct: false },
-            { text: "Lavage broncho-alvéolaire", correct: false }
-        ]
-    },
-    {
-        question: "Quel mécanisme explique l'hypoxémie dans le SDRA ?",
-        answers: [
-            { text: "Augmentation de la diffusion alvéolo-capillaire", correct: false },
-            { text: "Shunt droit-gauche", correct: true },
-            { text: "Hyperventilation alvéolaire", correct: false },
-            { text: "Diminution du gradient alvéolo-artériel", correct: false }
-        ]
-    },
-    {
-        question: "Quel traitement de première intention dans l'embolie pulmonaire non massive ?",
-        answers: [
-            { text: "Thrombolyse", correct: false },
-            { text: "Anticoagulation (HBPM)", correct: true },
-            { text: "Embolectomie chirurgicale", correct: false },
-            { text: "Vasodilatateurs pulmonaires", correct: false }
-        ]
-    },
-    {
-        question: "Quelle bactérie est responsable de la tuberculose pulmonaire ?",
-        answers: [
-            { text: "Haemophilus influenzae", correct: false },
-            { text: "Pseudomonas aeruginosa", correct: false },
-            { text: "Streptococcus pyogenes", correct: false },
-            { text: "Mycobacterium tuberculosis", correct: true }
-        ]
-    },
-    {
-        question: "Quel signe clinique est caractéristique d'un pneumothorax ?",
-        answers: [
-            { text: "Matité à la percussion", correct: false },
-            { text: "Diminution du murmure vésiculaire", correct: true },
-            { text: "Crépitants inspiratoires", correct: false },
-            { text: "Wheezing expiratoire", correct: false }
-        ]
-    },
-    {
-        question: "Quelle pathologie est associée à des images en rayons de miel au scanner thoracique ?",
-        answers: [
-            { text: "Sarcoïdose", correct: false },
-            { text: "Fibrose pulmonaire idiopathique", correct: true },
-            { text: "Pneumonie lobaire", correct: false },
-            { text: "Bronchopneumopathie chronique obstructive", correct: false }
-        ]
-    }
+const questions21 = [
+//New qestions
 ];
 
 // Initialisation du quiz lorsque le DOM est chargé
 document.addEventListener('DOMContentLoaded', () => {
-    const quiz4 = new QuizGame('quiz-container-4', questions4);
+    const quiz21 = new QuizGame('quiz-container-21', questions21);
 });
 
 
