@@ -14,7 +14,6 @@ class QuizGame {
         this.container = document.getElementById(containerId);
         this.questions = questions;
         
-        // Elements
         this.bestScoreDisplay = this.container.querySelector('.best-score-value');
         this.resetBestScoreBtn = this.container.querySelector('.reset-best-score-btn');
         this.startButton = this.container.querySelector('.start-btn');
@@ -27,21 +26,20 @@ class QuizGame {
         this.answerButtonsElement = this.container.querySelector('.answer-buttons');
         this.scoreTextElement = this.container.querySelector('.score-text');
         
-        // State
+
         this.currentQuestionIndex = 0;
         this.score = 0;
         this.bestScore = localStorage.getItem(`bestScore_${containerId}`) ? 
                          parseInt(localStorage.getItem(`bestScore_${containerId}`)) : 0;
         
-        // Initialize
         this.init();
     }
     
     init() {
-        // Set initial best score display
+
         this.updateBestScoreDisplay();
         
-        // Event listeners
+
         this.startButton.addEventListener('click', () => this.startQuiz());
         this.nextButton.addEventListener('click', () => {
             this.currentQuestionIndex++;
@@ -72,19 +70,32 @@ class QuizGame {
         }
     }
     
-    showQuestion(question) {
-        this.questionElement.innerText = question.question;
-        question.answers.forEach(answer => {
-            const button = document.createElement('button');
-            button.innerText = answer.text;
-            button.classList.add('btn', 'answer-btn');
-            if (answer.correct) {
-                button.dataset.correct = answer.correct;
+        showQuestion(question) {
+            this.resetState();
+            this.questionElement.innerText = question.question;
+            
+            const shuffledAnswers = this.shuffleArray([...question.answers]);
+            
+            shuffledAnswers.forEach(answer => {
+                const button = document.createElement('button');
+                button.innerText = answer.text;
+                button.classList.add('btn', 'answer-btn');
+                if (answer.correct) {
+                    button.dataset.correct = answer.correct;
+                }
+                button.addEventListener('click', (e) => this.selectAnswer(e));
+                this.answerButtonsElement.appendChild(button);
+            });
+        }
+    
+        shuffleArray(array) {
+            const newArray = [...array];
+            for (let i = newArray.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
             }
-            button.addEventListener('click', (e) => this.selectAnswer(e));
-            this.answerButtonsElement.appendChild(button);
-        });
-    }
+            return newArray;
+        }
     
     resetState() {
         this.nextButton.classList.add('hide');
@@ -104,9 +115,9 @@ class QuizGame {
             
         if (button === selectedButton) {
             if (correct) {
-                button.classList.add('correct'); // Vert si bonne réponse sélectionnée
+                button.classList.add('correct');
             } else {
-                button.classList.add('incorrect'); // Rouge si mauvaise réponse sélectionnée
+                button.classList.add('incorrect'); 
             }
         }
          });
@@ -142,7 +153,6 @@ class QuizGame {
             comment = "Dommage! Peut-être devriez-vous réviser un peu.";
         }
         
-        // Check and update best score
         let newRecord = false;
         if (this.score > this.bestScore) {
             this.bestScore = this.score;
@@ -152,7 +162,6 @@ class QuizGame {
         
         this.updateBestScoreDisplay();
         
-        // Display results
         this.scoreTextElement.innerHTML = `
             <p>Votre score: <strong>${percentage.toFixed(1)}%</strong></p>
             <p>Meilleur score: <strong>${((this.bestScore / this.questions.length) * 100).toFixed(1)}%</strong></p>
@@ -164,14 +173,13 @@ class QuizGame {
         this.resultsScreen.classList.add('hide');
         this.startQuiz();
     }
-    
-    // resetBestScore() {
-    //     if (confirm("Êtes-vous sûr de vouloir réinitialiser votre meilleur score ?")) {
-    //         this.bestScore = 0;
-    //        localStorage.setItem(`bestScore_${this.container.id}`, this.bestScore);
-    //         this.updateBestScoreDisplay();
-    //         alert("Meilleur score réinitialisé !");
-    //     }
-    // }
-}
 
+    resetBestScore() {
+        // if (confirm("Êtes-vous sûr de vouloir réinitialiser votre meilleur score ?")) {
+        //     this.bestScore = 0;
+        //     localStorage.setItem(`bestScore_${this.container.id}`, this.bestScore);
+        //     this.updateBestScoreDisplay();
+        //         alert("Meilleur score réinitialisé !");
+        // }
+    }
+}
