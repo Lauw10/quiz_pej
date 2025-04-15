@@ -1,0 +1,30 @@
+<?php
+session_start();
+include('basedon.php');
+
+if(!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
+    $_SESSION['error'] = "Veuillez vous connecter d'abord";
+    header('Location: ../newpej/index.php');
+    exit();
+}
+?>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="fin">
+        <img src="trophee.png" alt="Trophée champion">
+         <h1>   Félicitation, vous avez terminez ce quiz! 
+            <p>Vous pouvez retourner ultérieurement pour d'autres mise à jour. Ou cliquez <a href="index.php">ici</a> pour essayer d'autres quiz.</p></h1>
+    </div>
+</body>
+</html>
