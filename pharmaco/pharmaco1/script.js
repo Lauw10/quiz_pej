@@ -234,7 +234,8 @@ class QuizGame {
         if (percentage >= 80) {
             comment = "Très bien! Vous avez bien maitrisé cette leçon. Rédirection dans 5 secondes";   
             setTimeout(() => {
-                window.location.href = "../pharmaco2/index.html";
+                // window.location.href = "../pharmaco2/index.html";
+                window.location.href = "../../fin.html";
             }, 5000);
 
         }else if (percentage >= 65 && percentage < 80) {
