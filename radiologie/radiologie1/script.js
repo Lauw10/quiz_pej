@@ -1,4 +1,4 @@
-const questions71 = [
+const questions7 = [
     {
     "question": "Qui a découvert les rayons X et en quelle année ?",
     "answers": [
@@ -120,7 +120,7 @@ const questions71 = [
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    const quiz71 = new QuizGame('quiz-container-71', questions71);
+    const quiz7 = new QuizGame('quiz-container-7', questions7);
 });
 
 
