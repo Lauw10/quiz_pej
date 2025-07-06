@@ -45,6 +45,24 @@ const questions7 = [
     ]
 },
 {
+    "question": "Les rayons de Röntgen ont tous ces propriétés, sauf?",
+    "answers": [
+        {"text": "Bio-mécanique", "correct": true},
+        {"text": "Physique", "correct": false},
+        {"text": "Chimique", "correct": false},
+        {"text": "Biologique", "correct": false}
+    ]
+},
+{
+    "question": "Pour la production des rayons X il faut?",
+    "answers": [
+        {"text": "Une ampoule vide à quasi total", "correct": true},
+        {"text": "Un courant de haute tension", "correct": false},
+        {"text": "Un thermomètre", "correct": false},
+        {"text": "Un appareil capable de produire le courant de haute tension", "correct": false}
+    ]
+},
+{
     "question": "Quel facteur influence le pouvoir de pénétration des rayons X ?",
     "answers": [
         {"text": "La longueur d'onde des rayons", "correct": true},
@@ -261,7 +279,7 @@ class QuizGame {
         if (percentage >= 80) {
             comment = "Très bien! Vous avez bien maitrisé cette leçon. Rédirection dans 5 secondes";   
             setTimeout(() => {
-                window.location.href = "radiologie3/index.html";
+                window.location.href = "radiologie2/index.html";
             }, 5000);
 
         }else if (percentage >= 65 && percentage < 80) {
