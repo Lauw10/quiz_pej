@@ -1,5 +1,5 @@
 const questions7 = [
-    {
+{
     "question": "Qui a découvert les rayons X et en quelle année ?",
     "answers": [
         {"text": "W. Konrad Röntgen en 1895", "correct": true},
@@ -7,7 +7,7 @@ const questions7 = [
         {"text": "Thomas Edison en 1885", "correct": false},
         {"text": "Nikola Tesla en 1890", "correct": false}
     ]
-    },
+},
     {
     "question": "Quelle est la nature des rayons X selon la théorie ondulatoire ?",
     "answers": [
