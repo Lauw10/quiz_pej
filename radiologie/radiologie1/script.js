@@ -54,11 +54,11 @@ const questions7 = [
     ]
 },
 {
-    "question": "Pour la production des rayons X il faut?",
+    "question": "Pour la production des rayons X il faut, sauf?",
     "answers": [
-        {"text": "Une ampoule vide à quasi total", "correct": true},
+        {"text": "Une ampoule vide à quasi total", "correct": false},
         {"text": "Un courant de haute tension", "correct": false},
-        {"text": "Un thermomètre", "correct": false},
+        {"text": "Un thermomètre", "correct": true},
         {"text": "Un appareil capable de produire le courant de haute tension", "correct": false}
     ]
 },
@@ -81,7 +81,7 @@ const questions7 = [
     ]
 },
 {
-    "question": "Comment les rayons X agissent-ils sur un film photographique ?",
+    "question": "Selon la propriété chimique, comment les rayons X agissent-ils sur un film photographique ?",
     "answers": [
         {"text": "En réduisant les sels d'argent", "correct": true},
         {"text": "En le faisant fondre", "correct": false},
@@ -279,7 +279,7 @@ class QuizGame {
         if (percentage >= 80) {
             comment = "Très bien! Vous avez bien maitrisé cette leçon. Rédirection dans 5 secondes";   
             setTimeout(() => {
-                window.location.href = "radiologie2/index.html";
+                window.location.href = "../radiologie2/index.html";
             }, 5000);
 
         }else if (percentage >= 65 && percentage < 80) {

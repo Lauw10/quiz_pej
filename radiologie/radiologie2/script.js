@@ -306,7 +306,7 @@ class QuizGame {
         if (percentage >= 80) {
             comment = "Très bien! Vous avez bien maitrisé cette leçon. Rédirection dans 5 secondes";   
             setTimeout(() => {
-                window.location.href = "radiologie3/index.html";
+                window.location.href = "../radiologie3/index.html";
             }, 5000);
 
         }else if (percentage >= 65 && percentage < 80) {
