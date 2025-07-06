@@ -1,4 +1,3 @@
-// Exemple de questions pour ce quiz
 const questions4 = [
     {
         question: "Quel germe cause le plus souvent les pneumonies communautaires ?",
@@ -207,6 +206,7 @@ class QuizGame {
                 button.classList.add('correct');
             } else {
                 button.classList.add('incorrect'); 
+                if (!correct) Array.from(this.answerButtonsElement.children).find(btn => btn.dataset.correct === 'true').classList.add('correct');
             }
         }
          });

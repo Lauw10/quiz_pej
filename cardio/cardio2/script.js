@@ -1,9 +1,8 @@
-// Exemple de questions pour ce quiz
 const questions21 = [
 //New qestions
 ];
 
-// Initialisation du quiz lorsque le DOM est chargé
+
 document.addEventListener('DOMContentLoaded', () => {
     const quiz21 = new QuizGame('quiz-container-21', questions21);
 });
@@ -118,6 +117,7 @@ class QuizGame {
                 button.classList.add('correct');
             } else {
                 button.classList.add('incorrect'); 
+                if (!correct) Array.from(this.answerButtonsElement.children).find(btn => btn.dataset.correct === 'true').classList.add('correct');
             }
         }
          });

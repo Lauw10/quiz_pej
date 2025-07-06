@@ -206,7 +206,8 @@ class QuizGame {
             if (correct) {
                 button.classList.add('correct');
             } else {
-                button.classList.add('incorrect'); 
+                button.classList.add('incorrect');
+                if (!correct) Array.from(this.answerButtonsElement.children).find(btn => btn.dataset.correct === 'true').classList.add('correct'); 
             }
         }
          });
